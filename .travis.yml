@@ -13,5 +13,10 @@ before_install:
   - sudo apt-get install -y libopenal-dev
   - sudo apt-get install -y libalut-dev
   - sudo apt-get install -y libvorbis-dev
-install: make
+  - cd ..
+  - git clone https://github.com/Phase-Matrix-Software/SME-Core
+  - mv SME-Core SME_Core
+  - mv SME-Audio SME_Audio
+  - cd SME_Audio
+install: make CONF=Debug
 script: true
